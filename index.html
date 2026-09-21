@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVP Gestion Locative</title>
+    <!-- Lien vers le fichier CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Gestion Locative</h1>
+
+    <div class="container">
+        <!-- Formulaire d'ajout d'un bien -->
+        <div class="card">
+            <h2>Ajouter un Bien</h2>
+            <form id="bienForm">
+                <input type="text" id="code_ref" placeholder="Référence (ex: APP-101)" required>
+                    <select id="type_bien" name="type_bien" title="Type de bien" required>
+                    <option value="Appartement">Appartement</option>
+                    <option value="Studio">Studio</option>
+                    <option value="Magasin">Magasin</option>
+                    <option value="Villa">Villa</option>
+                </select>
+                <input type="number" id="loyer_hc" placeholder="Loyer Hors Charges (F CFA ou €)" step="0.01" required>
+                <input type="number" id="charges" placeholder="Provision Charges" step="0.01" >
+                <button type="submit">Enregistrer le bien</button>
+            </form>
+        </div>
+
+        <!-- Liste des biens -->
+        <div class="card">
+            <h2>Liste des Biens</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Référence</th>
+                        <th>Type</th>
+                        <th>Loyer HC</th>
+                        <th>Charges</th>
+                        <th>Statut</th>
+                    </tr>
+                </thead>
+                <tbody id="biensTableBody">
+                    <!-- Les données seront insérées ici par app.js -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- SECTION LOCATAIRES -->
+    <hr class="separator">
+    
+    <div class="container">
+        <!-- Formulaire d'ajout d'un locataire -->
+        <div class="card">
+            <h2>Ajouter un Locataire</h2>
+            <form id="locataireForm">
+                <input type="text" id="nom" placeholder="Nom de famille" required>
+                <input type="text" id="prenom" placeholder="Prénom" required>
+                <input type="tel" id="telephone" placeholder="Numéro de téléphone" required>
+                <button type="submit">Enregistrer le locataire</button>
+            </form>
+        </div>
+
+        <!-- Liste des locataires -->
+        <div class="card">
+            <h2>Liste des Locataires</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Téléphone</th>
+                    </tr>
+                </thead>
+                <tbody id="locatairesTableBody">
+                    <!-- Les données seront insérées ici par app.js -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Lien vers le fichier JavaScript (toujours à la fin du body) -->
+    <script src="app.js"></script>
+</body>
+</html>
